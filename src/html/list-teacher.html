@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="./dashboard.html" class="text-nowrap logo-img">
+              <h2>
+                <strong class="text-primary">Soft</strong>
+                <strong class="" style="color: #202224">Master</strong>
+              </h2>
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Trang quản trị</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./dashboard.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Trang tổng quan</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-student.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách học sinh</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách giảng viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-admin.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Admin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-course.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Khóa Học</span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Chi tiết</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm giảng viên</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <!--  Header Start -->
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <!-- Thông báo -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="javascript:void(0)">
+                    <i class="ti ti-bell-ringing"></i>
+                    <div class="notification bg-primary rounded-circle"></div>
+                  </a>
+                </li>
+                <!-- Ngôn ngữ -->
+                <li class="nav-item mx-2 dropdown">
+                  <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    id="languageDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/vn.png"
+                      alt="Vietnamese Flag"
+                      class="me-2 rounded-2"
+                      style="width: 45px; height: 35px"
+                    />
+                    <span class="d-none d-sm-inline">Việt Nam</span>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="languageDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/us.png"
+                          alt="English Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        English</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/fr.png"
+                          alt="French Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        Français</a
+                      >
+                    </li>
+                    <!-- Thêm các ngôn ngữ khác tại đây -->
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div id="currentAvatarContainer">
+                      <img
+                        id="currentAvatar"
+                        src=""
+                        alt="Loading"
+                        width="35"
+                        height="35"
+                        class="rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="changepass.html"
+                        class="d-flex align-items-center gap-2 dropdown-item"
+                      >
+                        <i class="ti ti-user fs-6"></i>
+                        <p class="mb-0 fs-3">Cài Đặt Tài Khoản</p>
+                      </a>
+
+                      <a
+                        id="logoutButton"
+                        href="./index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Đăng Xuất</a
+                      >
+                      <script>
+                        function logout() {
+                          localStorage.removeItem("admin");
+                          window.location.href = "./index.html";
+                        }
+                        document
+                          .getElementById("logoutButton")
+                          .addEventListener("click", logout);
+                        window.onload = function () {
+                          const admin = localStorage.getItem("admin");
+                          if (!admin) {
+                            window.location.href = "./index.html";
+                          }
+                        };
+                      </script>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div>
+            <div class="text-start">
+              <span style="font-size: 32px; font-weight: 700; color: #202224"
+                >Danh sách giảng viên</span
+              >
+            </div>
+            <div class="py-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-group mb-3" style="width: 400px">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <input
+                      style="background-color: #f5f6fa"
+                      type="text"
+                      class="form-control rounded-5"
+                      placeholder="Tìm kiếm"
+                      id="searchInput"
+                    />
+                  </div>
+                  <!-- Phân trang -->
+                  <div
+                    class="pagination-controls"
+                    style="
+                      width: 30%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-evenly;
+                    "
+                  >
+                    <button id="prevPage" class="btn btn-primary" disabled>
+                      Trang trước
+                    </button>
+                    <span id="currentPage">Trang 1</span>
+                    <button id="nextPage" class="btn btn-primary">
+                      Trang sau
+                    </button>
+
+                    <select
+                      id="pageSize"
+                      class="form-select"
+                      style="width: auto"
+                    >
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                      <option value="all">Tất cả</option>
+                    </select>
+                  </div>
+
+                  <div class="card mb-4">
+                    <div
+                      class="table-responsive p-0"
+                      style="max-height: 75vh; overflow-y: auto"
+                    >
+                      <div class="card-body">
+                        <div class="table-responsive p-0">
+                          <table class="table align-items-center mb-0">
+                            <thead style="background-color: #f1f4f9">
+                              <tr>
+                                <th
+                                  style="color: #202224"
+                                  class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Tên giảng viên
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Email
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Số điện thoại
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Chuyên ngành
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Slogan
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Giới tính
+                                </th>
+                                <!-- <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  creatorID
+                                </th> -->
+                                <th class="text-secondary opacity-7"></th>
+                                <th class="text-secondary opacity-7"></th>
+                              </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                              <!-- Dữ liệu từ API sẽ được thêm vào đây -->
+                            </tbody>
+                          </table>
+
+                          <div id="paginationContainer">
+                            <!-- Các nút phân trang sẽ được thêm vào đây -->
+                          </div>
+                          <!-- Modal Nhập Lý Do -->
+                          <div
+                            class="modal fade"
+                            id="reasonModal"
+                            tabindex="-1"
+                            aria-labelledby="reasonModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog" style="max-width: 40%">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="reasonModalLabel">
+                                    Nhập lý do thay đổi trạng thái
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="mb-3">
+                                    <label for="reasonInput" class="form-label"
+                                      >Lý do</label
+                                    >
+                                    <textarea
+                                      class="form-control"
+                                      id="reasonInput"
+                                      rows="3"
+                                      placeholder="Nhập lý do..."
+                                    ></textarea>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Hủy
+                                  </button>
+                                  <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    id="submitReason"
+                                  >
+                                    Xác nhận
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <script>
+                            document.addEventListener(
+                              "DOMContentLoaded",
+                              () => {
+                                // Lấy thông tin admin từ LocalStorage
+                                const admin = JSON.parse(
+                                  localStorage.getItem("admin")
+                                );
+                                const adminId = admin ? admin.id : null;
+                                const currentAvatarContainer =
+                                  document.getElementById(
+                                    "currentAvatarContainer"
+                                  );
+                                const currentAvatar =
+                                  document.getElementById("currentAvatar");
+
+                                // Kiểm tra adminId để hiển thị thông tin avatar
+                                if (adminId) {
+                                  fetch(
+                                    `http://localhost:3001/admin/getAdminByID/${adminId}`
+                                  )
+                                    .then((response) => response.json())
+                                    .then((adminData) => {
+                                      if (adminData.avatar) {
+                                        currentAvatar.src = adminData.avatar; // Hiển thị avatar
+                                        currentAvatarContainer.style.display =
+                                          "block"; // Hiển thị container chứa avatar
+                                      } else {
+                                        currentAvatarContainer.style.display =
+                                          "none"; // Ẩn container nếu không có avatar
+                                      }
+                                    })
+                                    .catch((error) => {
+                                      console.error(
+                                        "Lỗi khi lấy thông tin admin:",
+                                        error
+                                      );
+                                    });
+                                } else {
+                                  console.error(
+                                    "Vui lòng đăng nhập để sử dụng hệ thống"
+                                  );
+                                }
+
+                                // Các phần tử DOM liên quan đến bảng và phân trang
+                                const searchInput =
+                                  document.getElementById("searchInput");
+                                const tableBody =
+                                  document.getElementById("userTableBody");
+                                const prevPageBtn =
+                                  document.getElementById("prevPage");
+                                const nextPageBtn =
+                                  document.getElementById("nextPage");
+                                const currentPageSpan =
+                                  document.getElementById("currentPage");
+                                const pageSizeSelect =
+                                  document.getElementById("pageSize");
+
+                                // Biến toàn cục và cấu hình phân trang
+                                let teachersData = []; // Danh sách giảng viên
+                                let currentPage = 1; // Trang hiện tại
+                                let pageSize = 10; // Số lượng bản ghi mỗi trang
+
+                                // Hàm định dạng ngày thành dạng 'dd/MM/yyyy'
+                                const formatDate = (dateString) => {
+                                  if (!dateString) return "";
+                                  const date = new Date(dateString);
+                                  return date.toLocaleDateString("vi-VN"); // Trả về ngày tháng năm theo định dạng tiếng Việt
+                                };
+
+                                // Hàm gọi API chung
+                                const fetchData = async (url, options = {}) => {
+                                  try {
+                                    const response = await fetch(url, options);
+                                    if (!response.ok)
+                                      throw new Error(
+                                        `Lỗi HTTP! Mã trạng thái: ${response.status}`
+                                      );
+                                    return await response.json();
+                                  } catch (error) {
+                                    console.error(
+                                      `Lỗi khi gọi API từ ${url}:`,
+                                      error
+                                    );
+                                    return null;
+                                  }
+                                };
+
+                                // Lấy danh sách giảng viên từ API và sắp xếp theo ngày tạo mới nhất
+                                const fetchTeachers = async () => {
+                                  const data = await fetchData(
+                                    "http://localhost:3001/teacher/getAll"
+                                  );
+                                  if (data) {
+                                    teachersData = data.sort(
+                                      (a, b) =>
+                                        new Date(b.createdAt) -
+                                        new Date(a.createdAt)
+                                    ); // Sắp xếp giảm dần theo ngày tạo
+                                    displayTeachers(); // Hiển thị danh sách giảng viên
+                                  }
+                                };
+
+                                // Đổi trạng thái khóa/mở giảng viên
+                                let selectedTeacherID = null;
+                                let selectedButton = null;
+
+                                const toggleLockStatus = (
+                                  teacherID,
+                                  button
+                                ) => {
+                                  selectedTeacherID = teacherID;
+                                  selectedButton = button;
+                                  const reasonModal = new bootstrap.Modal(
+                                    document.getElementById("reasonModal"),
+                                    {
+                                      backdrop: false, // Vô hiệu hoá backdrop
+                                    }
+                                  );
+
+                                  reasonModal.show();
+                                };
+
+                                document
+                                  .getElementById("submitReason")
+                                  .addEventListener("click", async () => {
+                                    const reason = document
+                                      .getElementById("reasonInput")
+                                      .value.trim();
+
+                                    if (!reason) {
+                                      alert("Lý do không được để trống!");
+                                      return;
+                                    }
+
+                                    const newStatus = !teachersData.find(
+                                      (t) => t._id === selectedTeacherID
+                                    ).isLocked;
+
+                                    const result = await fetchData(
+                                      `http://localhost:3001/teacher/change-status/${selectedTeacherID}`,
+                                      {
+                                        method: "POST",
+                                        headers: {
+                                          "Content-Type": "application/json",
+                                        },
+                                        body: JSON.stringify({
+                                          isLocked: newStatus,
+                                          reason: reason,
+                                        }),
+                                      }
+                                    );
+
+                                    if (result) {
+                                      const teacher = teachersData.find(
+                                        (t) => t._id === selectedTeacherID
+                                      );
+                                      teacher.isLocked = newStatus;
+                                      selectedButton.textContent = newStatus
+                                        ? "Khóa"
+                                        : "Mở";
+                                      selectedButton.classList.toggle(
+                                        "btn-danger",
+                                        newStatus
+                                      );
+                                      selectedButton.classList.toggle(
+                                        "btn-success",
+                                        !newStatus
+                                      );
+                                    }
+
+                                    // Đóng modal sau khi gửi
+                                    bootstrap.Modal.getInstance(
+                                      document.getElementById("reasonModal")
+                                    ).hide();
+                                  });
+
+                                // Lấy danh sách khóa học của giảng viên
+                                const fetchCourses = async (teacherID) => {
+                                  return await fetchData(
+                                    `http://localhost:3001/course/getCourseByTeacherID/${teacherID}`
+                                  );
+                                };
+
+                                // Tạo hàng hiển thị cho từng giảng viên
+                                const createTeacherRow = async (teacher) => {
+                                  const row = document.createElement("tr");
+
+                                  row.innerHTML = `
+      <td style="color: black;">${teacher.name || ""}</td>
+      <td style="color: black;">${teacher.email || ""}</td>
+      <td style="color: black;">${teacher.phone || ""}</td>
+      <td style="color: black;">${teacher.major || ""}</td>
+      <td style="color: black;">${teacher.slogan || ""}</td>
+      <td style="color: black;">${teacher.gender || ""}</td>
+      <td>
+        <button class="btn btn-info rounded-5 detail-btn" data-teacher-id="${
+          teacher._id
+        }">Chi tiết</button>
+        <button class="btn ${
+          teacher.isLocked ? "btn-danger" : "btn-success"
+        } rounded-5 lock-btn" data-teacher-id="${teacher._id}">
+          ${teacher.isLocked ? "Khóa" : "Mở"}
+        </button>
+      </td>
+    `;
+
+                                  // Xử lý sự kiện
+                                  const detailButton =
+                                    row.querySelector(".detail-btn");
+                                  detailButton.addEventListener(
+                                    "click",
+                                    async () => {
+                                      const courses = await fetchCourses(
+                                        teacher._id
+                                      );
+                                      showCoursesPopup(teacher.name, courses);
+                                    }
+                                  );
+
+                                  const lockButton =
+                                    row.querySelector(".lock-btn");
+                                  lockButton.addEventListener("click", () =>
+                                    toggleLockStatus(teacher._id, lockButton)
+                                  );
+
+                                  return row;
+                                };
+
+                                // Hiển thị danh sách giảng viên theo phân trang
+                                const displayTeachers = async () => {
+                                  tableBody.innerHTML = "";
+                                  const start = (currentPage - 1) * pageSize;
+                                  const end =
+                                    pageSize === "all"
+                                      ? teachersData.length
+                                      : start + pageSize;
+
+                                  const fragment =
+                                    document.createDocumentFragment();
+                                  for (const teacher of teachersData.slice(
+                                    start,
+                                    end
+                                  )) {
+                                    const row = await createTeacherRow(teacher);
+                                    fragment.appendChild(row);
+                                  }
+                                  tableBody.appendChild(fragment);
+
+                                  // Cập nhật trạng thái nút phân trang
+                                  currentPageSpan.textContent = `Trang ${currentPage}`;
+                                  prevPageBtn.disabled = currentPage === 1;
+                                  nextPageBtn.disabled =
+                                    end >= teachersData.length ||
+                                    pageSize === "all";
+                                };
+
+                                // Hiển thị popup danh sách khóa học
+                                const showCoursesPopup = (
+                                  teacherName,
+                                  courses
+                                ) => {
+                                  const existingModal =
+                                    document.getElementById("exampleModal");
+                                  if (existingModal) existingModal.remove();
+
+                                  const modalHTML = `
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 40%;"> <!-- Style chiều rộng trực tiếp tại đây -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Danh sách khóa học của ${teacherName}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+            ${
+              courses && courses.length
+                ? courses
+                    .map(
+                      (c) =>
+                        `<div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                          <h5 style="color: #000;">${c.name}</h5>
+                          <p style="color: #555;">${c.describe}</p>
+                          <img src="${
+                            c.img
+                          }" alt="Course Image" style="max-width: 100%; height: auto; max-height: 200px; object-fit: cover; margin-bottom: 10px; border-radius: 10px;" /> <!-- Bo góc ảnh -->
+                          <p><strong>Giá: </strong><span style="color: #000;">${c.price.toLocaleString()} VND</span></p>
+                          <p><strong>Ngày tạo: </strong><span style="color: #000;">${formatDate(
+                            c.createdAt
+                          )}</span></p>
+                        </div>`
+                    )
+                    .join("")
+                : "<p>Giảng viên này chưa có khóa học nào.</p>"
+            }
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+                                  document.body.insertAdjacentHTML(
+                                    "beforeend",
+                                    modalHTML
+                                  );
+
+                                  // Ẩn thanh cuộn
+                                  const style = document.createElement("style");
+                                  style.innerHTML = `
+    #exampleModal .modal-body::-webkit-scrollbar {
+      display: none;
+    }
+  `;
+                                  document.head.appendChild(style);
+
+                                  const modal = new bootstrap.Modal(
+                                    document.getElementById("exampleModal")
+                                  );
+                                  modal.show();
+                                };
+
+                                // Điều khiển phân trang
+                                prevPageBtn.addEventListener("click", () => {
+                                  if (currentPage > 1) {
+                                    currentPage--;
+                                    displayTeachers();
+                                  }
+                                });
+
+                                nextPageBtn.addEventListener("click", () => {
+                                  const maxPage = Math.ceil(
+                                    teachersData.length / pageSize
+                                  );
+                                  if (currentPage < maxPage) {
+                                    currentPage++;
+                                    displayTeachers();
+                                  }
+                                });
+
+                                pageSizeSelect.addEventListener(
+                                  "change",
+                                  (event) => {
+                                    const selectedValue = event.target.value;
+                                    pageSize =
+                                      selectedValue === "all"
+                                        ? "all"
+                                        : parseInt(selectedValue, 10);
+                                    currentPage = 1;
+                                    displayTeachers();
+                                  }
+                                );
+
+                                // Xử lý tìm kiếm theo tên, email, hoặc số điện thoại
+                                searchInput.addEventListener("input", () => {
+                                  const searchTerm = searchInput.value.trim();
+                                  const searchParams = {};
+                                  if (searchTerm) {
+                                    if (searchTerm.includes("@"))
+                                      searchParams.email = searchTerm;
+                                    else if (/^\d+$/.test(searchTerm))
+                                      searchParams.phone = searchTerm;
+                                    else searchParams.name = searchTerm;
+                                  }
+                                  fetchData(
+                                    "http://localhost:3001/teacher/filter",
+                                    {
+                                      method: "POST",
+                                      headers: {
+                                        "Content-Type": "application/json",
+                                      },
+                                      body: JSON.stringify(searchParams),
+                                    }
+                                  ).then((data) => {
+                                    if (data) {
+                                      teachersData = data;
+                                      currentPage = 1;
+                                      displayTeachers();
+                                    }
+                                  });
+                                });
+
+                                // Khởi tạo và tải dữ liệu ban đầu
+                                fetchTeachers();
+                              }
+                            );
+                          </script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!--  Header End -->
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  </body>
+</html>

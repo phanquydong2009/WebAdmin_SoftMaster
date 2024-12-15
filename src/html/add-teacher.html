@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="./dashboard.html" class="text-nowrap logo-img">
+              <h2>
+                <strong class="text-primary">Soft</strong>
+                <strong class="" style="color: #202224">Master</strong>
+              </h2>
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Trang quản trị</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./dashboard.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Trang tổng quan</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-student.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách học sinh</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách giảng viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-admin.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Admin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-course.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Khóa Học</span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Chi tiết</span>
+              </li>
+              <!-- <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-danhmucbaihoc.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm danh mục bài học</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./view-danhmucbaihoc.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-list"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh mục bài học</span>
+                </a>
+              </li> -->
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm giảng viên</span>
+                </a>
+              </li>
+              <!-- <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./view-noidungbaitap.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-list"></i>
+                  </span>
+                  <span class="hide-menu">Xem nội dung bài tập</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-baihoc.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm bài học</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./view-baihoc.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-list"></i>
+                  </span>
+                  <span class="hide-menu">Xem bài học</span>
+                </a>
+              </li> -->
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <!--  Header Start -->
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <!-- Thông báo -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="javascript:void(0)">
+                    <i class="ti ti-bell-ringing"></i>
+                    <div class="notification bg-primary rounded-circle"></div>
+                  </a>
+                </li>
+                <!-- Ngôn ngữ -->
+                <li class="nav-item mx-2 dropdown">
+                  <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    id="languageDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/vn.png"
+                      alt="Vietnamese Flag"
+                      class="me-2 rounded-2"
+                      style="width: 45px; height: 35px"
+                    />
+                    <span class="d-none d-sm-inline">Việt Nam</span>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="languageDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/us.png"
+                          alt="English Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        English</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/fr.png"
+                          alt="French Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        Français</a
+                      >
+                    </li>
+                    <!-- Thêm các ngôn ngữ khác tại đây -->
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div id="currentAvatarContainer">
+                      <img
+                        id="currentAvatar"
+                        src=""
+                        alt="Loading"
+                        width="35"
+                        height="35"
+                        class="rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="changepass.html"
+                        class="d-flex align-items-center gap-2 dropdown-item"
+                      >
+                        <i class="ti ti-user fs-6"></i>
+                        <p class="mb-0 fs-3">Cài Đặt Tài Khoản</p>
+                      </a>
+                      <a
+                        id="logoutButton"
+                        href="./index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Đăng Xuất</a
+                      >
+                      <script>
+                        function logout() {
+                          localStorage.removeItem("admin");
+
+                          window.location.href = "./index.html";
+                        }
+
+                        document
+                          .getElementById("logoutButton")
+                          .addEventListener("click", logout);
+
+                        window.onload = function () {
+                          const admin = localStorage.getItem("admin");
+                          if (!admin) {
+                            window.location.href = "./index.html";
+                          }
+                        };
+                      </script>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div>
+            <div class="text-start">
+              <span style="font-size: 32px; font-weight: 700; color: #202224"
+                >Thêm giảng viên</span
+              >
+            </div>
+            <div class="py-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <form id="teacherForm">
+                        <div class="row">
+                          <!-- Cột bên trái -->
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="name" class="form-label"
+                                >Tên giảng viên</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                placeholder="Nhập tên giảng viên"
+                                required
+                              />
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="email" class="form-label"
+                                >Email</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                placeholder="Nhập email giảng viên"
+                                required
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="phone" class="form-label"
+                                >Phone</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                placeholder="Nhập số điện thoại giảng viên"
+                                required
+                                pattern="^0\d{9}$"
+                                title="Số điện thoại phải bắt đầu bằng số 0 và có đủ 10 chữ số"
+                                oninput="validatePhoneInput(event)"
+                              />
+                              <div class="invalid-feedback">
+                                Vui lòng nhập đúng số điện thoại Việt Nam (bắt
+                                đầu bằng 0 và có đủ 10 chữ số).
+                              </div>
+                            </div>
+                            <script>
+                              // Hàm kiểm tra số điện thoại khi người dùng nhập
+                              function validatePhoneInput(event) {
+                                const input = event.target;
+                                const value = input.value;
+
+                                // Kiểm tra nếu có ký tự không phải số
+                                if (/[^0-9]/.test(value)) {
+                                  input.setCustomValidity(
+                                    "Vui lòng chỉ nhập số"
+                                  );
+                                } else {
+                                  input.setCustomValidity("");
+                                }
+
+                                // Kiểm tra định dạng số điện thoại (10 chữ số, bắt đầu bằng 0)
+                                const phonePattern = /^0\d{9}$/;
+                                if (!phonePattern.test(value)) {
+                                  input.setCustomValidity(
+                                    "Số điện thoại phải bắt đầu bằng 0 và có đủ 10 chữ số"
+                                  );
+                                } else {
+                                  input.setCustomValidity("");
+                                }
+                              }
+                            </script>
+                            <div class="mb-3">
+                              <label for="avatar" class="form-label"
+                                >Chọn Avatar</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="file"
+                                class="form-control"
+                                id="avatar"
+                                accept="image/*"
+                                required
+                              />
+                              <small
+                                id="avatarHelp"
+                                class="form-text text-muted"
+                              >
+                                Vui lòng chọn một ảnh có định dạng hợp lệ (JPG,
+                                PNG, GIF).
+                              </small>
+                            </div>
+                          </div>
+
+                          <!-- Cột bên phải -->
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="gender" class="form-label"
+                                >Giới tính</label
+                              >
+                              <select
+                                id="gender"
+                                class="form-control"
+                                style="border-radius: 15px"
+                                required
+                              >
+                                <option value="" disabled selected>
+                                  Giới tính
+                                </option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                              </select>
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="major" class="form-label"
+                                >Chuyên ngành</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="text"
+                                class="form-control"
+                                id="major"
+                                placeholder="Nhập chuyên ngành giảng viên"
+                                required
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="slogan" class="form-label"
+                                >Slogan</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="text"
+                                class="form-control"
+                                id="slogan"
+                                placeholder="Nhập Slogan giảng viên"
+                                required
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="adminName" class="form-label"
+                                >Đang đăng nhập với Admin tên</label
+                              >
+                              <input
+                                style="border-radius: 15px"
+                                type="text"
+                                class="form-control"
+                                id="adminName"
+                                placeholder="Tên Admin"
+                                readonly
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Nút Thêm danh mục bài học -->
+                        <div class="text-center mt-4">
+                          <button
+                            type="submit"
+                            class="btn btn-primary rounded-2"
+                            style="
+                              background-color: #0961f5;
+                              border: none;
+                              color: white;
+                              width: 231px;
+                              height: 40px;
+                              font-weight: 700;
+                            "
+                          >
+                            Thêm giảng viên
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Thông báo -->
+            <div
+              class="modal fade"
+              id="notificationModal"
+              tabindex="-1"
+              aria-labelledby="notificationModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">
+                      Thông Báo
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body" id="notificationMessage"></div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Đóng
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              let avatarUrl = ""; // Biến để lưu URL của ảnh đã upload
+
+              document
+                .getElementById("avatar")
+                .addEventListener("change", async (event) => {
+                  const avatarInput = event.target.files[0];
+                  if (!avatarInput) {
+                    alert("Vui lòng chọn một ảnh!");
+                    return;
+                  }
+
+                  // Chuyển đổi file ảnh thành base64
+                  const reader = new FileReader();
+                  reader.onload = async () => {
+                    const base64Image = reader.result.split(",")[1];
+
+                    // Gửi ảnh đến API ImgBB
+                    const formData = new FormData();
+                    formData.append("image", base64Image);
+
+                    try {
+                      const response = await fetch(
+                        "https://api.imgbb.com/1/upload?expiration=600&key=4254690dda1ab4a773856d7de73bfd86",
+                        {
+                          method: "POST",
+                          body: formData,
+                        }
+                      );
+                      const result = await response.json();
+
+                      if (result.success) {
+                        // Lấy URL của ảnh và lưu vào biến avatarUrl
+                        avatarUrl = result.data.url;
+                        console.log("URL của avatar:", avatarUrl);
+
+                        // Cập nhật thông báo thành công
+                        document.getElementById(
+                          "avatarHelp"
+                        ).innerText = `Avatar đã được upload và URL đã lưu: ${avatarUrl}`;
+                      } else {
+                        alert("Upload thất bại, vui lòng thử lại.");
+                      }
+                    } catch (error) {
+                      console.error("Lỗi khi upload avatar:", error);
+                      alert("Có lỗi xảy ra, vui lòng thử lại.");
+                    }
+                  };
+                  reader.readAsDataURL(avatarInput);
+                });
+
+              document.addEventListener("DOMContentLoaded", () => {
+                const admin = JSON.parse(localStorage.getItem("admin"));
+                const adminId = admin ? admin.id : null;
+
+                if (adminId) {
+                  // Gửi yêu cầu lấy thông tin admin từ API
+                  fetch(`http://localhost:3001/admin/getAdminByID/${adminId}`)
+                    .then((response) => response.json())
+                    .then((adminData) => {
+                      if (adminData.avatar) {
+                        document.getElementById("currentAvatar").src =
+                          adminData.avatar;
+                        document.getElementById(
+                          "currentAvatarContainer"
+                        ).style.display = "block";
+                      }
+                      // Hiển thị tên của admin lên input adminName
+                      if (adminData.name) {
+                        document.getElementById("adminName").value =
+                          adminData.name;
+                      }
+                    })
+                    .catch((error) =>
+                      console.error("Error fetching admin info:", error)
+                    );
+                } else {
+                  console.error("Vui lòng đăng nhập để sử dụng hệ thống");
+                }
+
+                const teacherForm = document.getElementById("teacherForm");
+                teacherForm.addEventListener("submit", (event) => {
+                  event.preventDefault();
+
+                  const formData = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    phone: document.getElementById("phone").value,
+                    password: "trong123",
+                    avatar: avatarUrl, // Gán URL đã upload vào avatar
+                    major: document.getElementById("major").value,
+                    slogan: document.getElementById("slogan").value,
+                    gender: document.getElementById("gender").value,
+                  };
+
+                  if (adminId) {
+                    fetch(`http://localhost:3001/teacher/register/${adminId}`, {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(formData),
+                    })
+                      .then((response) => {
+                        if (!response.ok)
+                          throw new Error("Error adding teacher");
+                        return response.json();
+                      })
+                      .then((result) => {
+                        // Show success modal
+                        document.getElementById(
+                          "notificationMessage"
+                        ).textContent = "Giảng viên đã được thêm thành công!";
+                        var myModal = new bootstrap.Modal(
+                          document.getElementById("notificationModal"),
+                          {
+                            backdrop: false, // Disable backdrop
+                          }
+                        );
+
+                        // Show modal and reload the page after modal is closed
+                        myModal.show();
+
+                        // Add event listener to close modal and reload page
+                        document
+                          .getElementById("notificationModal")
+                          .addEventListener("hidden.bs.modal", function () {
+                            teacherForm.reset();
+                            location.reload(); // Reload after the modal is closed
+                          });
+                      })
+                      .catch((error) => {
+                        // Show error modal
+                        document.getElementById(
+                          "notificationMessage"
+                        ).textContent =
+                          "Email giảng viên này đã đăng kí tài khoản.";
+                        var myModal = new bootstrap.Modal(
+                          document.getElementById("notificationModal"),
+                          {
+                            backdrop: false, // Disable backdrop
+                          }
+                        );
+
+                        // Show modal for error
+                        myModal.show();
+                      });
+                  } else {
+                    alert("Không thể thêm giảng viên. Admin ID không hợp lệ.");
+                  }
+                });
+              });
+            </script>
+          </div>
+        </header>
+        <!--  Header End -->
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  </head>
+
+  <body style="
+  background: linear-gradient(
+    177deg,
+    #7564e4 0%,
+    #7564e4 50%,
+    #020b36 50%,
+    #172b4c 100%
+  );
+">
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <div
+        class="position-relative overflow-hidden min-vh-100 d-flex align-items-center justify-content-center"
+      >
+        <div class="d-flex align-items-center justify-content-center w-100">
+          <div class="row justify-content-center w-100">
+            <div class="text-center">
+              <h2 class="text-white" style="font-weight: 600; font-size: 28px; margin-bottom: 84px;">SoftMaster Admin</span>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xxl-3">
+              <div class="card mb-0">
+                <div class="card-body">
+                  <p class="text-center">Vui lòng điền nhập mật khẩu mới</p>
+                  <form id="resetPasswordForm">
+                    <div class="mb-3">
+                        <label for="inputNewPass" class="form-label">Nhập mật khẩu mới</label>
+                        <div class="d-flex align-items-center">
+                            <input
+                                type="password" 
+                                class="form-control me-2"
+                                id="inputNewPass"
+                                aria-describedby="emailHelp"
+                                style="width: 100%;"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-primary w-100 py-8 fs-4 mb-3 rounded-2"
+                        style="background-color: #0961F5;"
+                    >
+                        Xác nhận
+                    </button>
+                </form>
+                <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="notificationModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="notificationModalBody"></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  // Hàm hiển thị modal
+                  function showNotificationModal(title, message) {
+                      document.getElementById('notificationModalLabel').textContent = title;
+                      document.getElementById('notificationModalBody').textContent = message;
+                      const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+                      notificationModal.show();
+                  }
+              
+                  document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+                      e.preventDefault();
+              
+                      const newPassword = document.getElementById('inputNewPass').value;
+                      const adminID = localStorage.getItem('adminID');
+              
+                      if (!adminID) {
+                          showNotificationModal('Lỗi', 'Không tìm thấy adminID, vui lòng thử lại!');
+                          return;
+                      }
+              
+                      fetch(`http://localhost:3001/admin/reset-password/${adminID}`, {
+                          method: 'POST',
+                          headers: {
+                              'Content-Type': 'application/json',
+                          },
+                          body: JSON.stringify({ newPassword: newPassword }),
+                      })
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error('Mạng không ổn định'); // Ném lỗi nếu phản hồi không thành công
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          console.log(data); // Kiểm tra dữ liệu trả về
+                          if (data.message === "Mật khẩu đã được cập nhật thành công") {
+                              showNotificationModal('Thành công', 'Đổi mật khẩu thành công!');
+                              setTimeout(() => {
+                                  window.location.href = './index.html'; // Điều hướng đến trang dashboard
+                              }, 2000); // Đợi 2 giây trước khi điều hướng
+                          } else {
+                              showNotificationModal('Thất bại', 'Đổi mật khẩu thất bại!');
+                          }
+                      })
+                      .catch(error => {
+                          console.error('Lỗi đổi mật khẩu:', error);
+                          showNotificationModal('Lỗi', 'Có lỗi xảy ra, vui lòng thử lại!');
+                      });
+                  });
+              </script>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

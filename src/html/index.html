@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  </head>
+
+  <body
+    style="
+      background: linear-gradient(
+        177deg,
+        #7564e4 0%,
+        #7564e4 50%,
+        #020b36 50%,
+        #172b4c 100%
+      );
+    "
+  >
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+      style="display: flex; flex-direction: column; min-height: 100vh"
+    >
+      <div
+        class="position-relative overflow-hidden d-flex flex-column flex-grow-1"
+        style="flex: 1"
+      >
+        <div
+          class="flex-grow-1 d-flex align-items-center justify-content-center"
+        >
+          <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+              <div class="text-center">
+                <h2
+                  class="text-white"
+                  style="font-weight: 600; font-size: 28px; margin-bottom: 84px"
+                >
+                  SoftMaster Admin
+                </h2>
+              </div>
+              <div class="col-md-8 col-lg-6 col-xxl-3">
+                <div class="card mb-0">
+                  <div class="card-body">
+                    <p class="text-center">
+                      Vui lòng điền chi tiết đăng nhập quản trị viên duy nhất
+                      của bạn bên dưới
+                    </p>
+                    <form id="loginForm">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"
+                          >Nhập email</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                      <div class="mb-4">
+                        <label for="exampleInputPassword1" class="form-label"
+                          >Mật khẩu</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                        />
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-4"
+                      >
+                        <div class="form-check">
+                          <input
+                            class="form-check-input primary"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                            checked
+                          />
+                          <label
+                            class="form-check-label text-dark"
+                            for="flexCheckChecked"
+                          >
+                            Nhớ tài khoản
+                          </label>
+                        </div>
+                        <a
+                          class="fw-bold"
+                          style="color: #999"
+                          href="./forgetpassword.html"
+                          >Quên mật khẩu?</a
+                        >
+                      </div>
+                      <button
+                        type="submit"
+                        id="loginButton"
+                        class="btn btn-primary w-100 py-8 fs-4 rounded-2"
+                        style="background-color: #0961f5"
+                      >
+                        Đăng nhập
+                      </button>
+                      <div
+                        id="errorMessage"
+                        style="color: red; display: none; margin-top: 10px"
+                      ></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container"
+          style="
+            margin-top: auto;
+            position: relative;
+            z-index: 10;
+            pointer-events: auto;
+          "
+        >
+          <div class="row align-items-center justify-content-xl-between">
+            <div class="col-xl-6">
+              <div class="copyright text-center text-xl-left text-muted">
+                &copy; 2024
+                <a
+                  href="index.html"
+                  class="font-weight-bold ml-1"
+                  target="_blank"
+                  >SOFT MASTER</a
+                >
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <ul
+                class="nav nav-footer justify-content-center justify-content-xl-end"
+              >
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link" target="_blank"
+                    >Team Dev SOFTMASTER</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function onLogin(email, password) {
+        try {
+          const response = await fetch("http://localhost:3001/admin/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            if (data.message === "Đăng nhập thành công") {
+              localStorage.setItem(
+                "admin",
+                JSON.stringify({
+                  email: data.user.email,
+                  id: data.user._id,
+                  name: data.user.name,
+                  phone: data.user.phone,
+                  avatar: data.user.avatar,
+                })
+              );
+              window.location.href = "./dashboard.html";
+            } else {
+              document.getElementById("errorMessage").textContent =
+                data.message || "Đăng nhập không thành công";
+              document.getElementById("errorMessage").style.display = "block";
+            }
+          } else {
+            document.getElementById("errorMessage").textContent =
+              data.message || "Đăng nhập không thành công";
+            document.getElementById("errorMessage").style.display = "block";
+          }
+        } catch (error) {
+          console.error("Có lỗi xảy ra:", error);
+          document.getElementById("errorMessage").textContent =
+            "Có lỗi xảy ra. Vui lòng thử lại.";
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      }
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("exampleInputEmail1").value;
+          const password = document.getElementById(
+            "exampleInputPassword1"
+          ).value;
+
+          onLogin(email, password);
+        });
+
+      window.onload = function () {
+        const admin = JSON.parse(localStorage.getItem("admin"));
+        if (admin) {
+          window.location.href = "./dashboard.html";
+        }
+      };
+
+      // Hàm đăng xuất
+      function logout() {
+        localStorage.removeItem("admin"); // Xóa thông tin admin khỏi localStorage
+        window.location.href = "./login.html"; // Điều hướng đến trang đăng nhập
+      }
+    </script>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

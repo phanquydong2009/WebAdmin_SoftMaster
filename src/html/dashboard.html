@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="./dashboard.html" class="text-nowrap logo-img">
+              <h2>
+                <strong class="text-primary">Soft</strong>
+                <strong class="" style="color: #202224">Master</strong>
+              </h2>
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Trang quản trị</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./dashboard.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Trang tổng quan</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-student.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách học sinh</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách giảng viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-admin.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Admin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-course.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Khóa Học</span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Chi tiết</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm giảng viên</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <!-- Thông báo -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="javascript:void(0)">
+                    <i class="ti ti-bell-ringing"></i>
+                    <div class="notification bg-primary rounded-circle"></div>
+                  </a>
+                </li>
+                <!-- Ngôn ngữ -->
+                <li class="nav-item mx-2 dropdown">
+                  <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    id="languageDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      id="currentFlag"
+                      src="https://flagcdn.com/w20/vn.png"
+                      alt="Vietnamese Flag"
+                      class="me-2 rounded-2"
+                      style="width: 45px; height: 35px"
+                    />
+                    <span id="currentLanguage" class="d-none d-sm-inline"
+                      >Việt Nam</span
+                    >
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="languageDropdown"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item language-option"
+                        data-lang="en"
+                        href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/us.png"
+                          alt="English Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        English</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item language-option"
+                        data-lang="fr"
+                        href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/fr.png"
+                          alt="French Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        Français</a
+                      >
+                    </li>
+                    <!-- Thêm các ngôn ngữ khác tại đây -->
+                  </ul>
+                </li>
+                <script></script>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div id="currentAvatarContainer">
+                      <img
+                        id="currentAvatar"
+                        src=""
+                        alt="Loading"
+                        width="35"
+                        height="35"
+                        class="rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="changepass.html"
+                        class="d-flex align-items-center gap-2 dropdown-item"
+                      >
+                        <i class="ti ti-user fs-6"></i>
+                        <p class="mb-0 fs-3">Cài Đặt Tài Khoản</p>
+                      </a>
+
+                      <a
+                        id="logoutButton"
+                        href="./index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Đăng Xuất</a
+                      >
+                      <script>
+                        function logout() {
+                          localStorage.removeItem("admin");
+
+                          window.location.href = "./index.html";
+                        }
+
+                        document
+                          .getElementById("logoutButton")
+                          .addEventListener("click", logout);
+
+                        window.onload = function () {
+                          const admin = localStorage.getItem("admin");
+                          if (!admin) {
+                            window.location.href = "./index.html";
+                          }
+                        };
+                      </script>
+                      <script>
+                        function logout() {
+                          localStorage.removeItem("admin");
+
+                          window.location.href = "./index.html";
+                        }
+
+                        document
+                          .getElementById("logoutButton")
+                          .addEventListener("click", logout);
+
+                        window.onload = function () {
+                          const admin = localStorage.getItem("admin");
+                          if (!admin) {
+                            window.location.href = "./index.html";
+                          }
+                        };
+                      </script>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <!--  Header End -->
+        <div class="container-fluid">
+          <!--  Row 1 -->
+          <div class="row">
+            <div class="col-lg-8 d-flex align-items-strech">
+              <div class="card w-100">
+                <div class="card-body">
+                  <div
+                    class="d-sm-flex d-block align-items-center justify-content-between mb-9"
+                  >
+                    <div class="mb-3 mb-sm-0">
+                      <h5 class="card-title fw-semibold">Thống kê</h5>
+                    </div>
+                    <!-- <div class="mb-3">
+                      <div class="d-flex">
+                        <select
+                          id="daySelect"
+                          class="form-select me-2"
+                          style="width: 33%"
+                        >
+                          <option value="">Ngày</option>
+                        </select>
+
+                        <select
+                          id="monthSelect"
+                          class="form-select me-2"
+                          style="width: 33%"
+                        >
+                          <option value="">Tháng</option>
+                        </select>
+
+                        <select
+                          id="yearSelect"
+                          class="form-select"
+                          style="width: 33%"
+                        >
+                          <option value="">Năm</option>
+                        </select>
+                      </div>
+                    </div> -->
+
+                    <script>
+                      // Tạo ngày
+                      const daySelect = document.getElementById("daySelect");
+                      for (let i = 1; i <= 31; i++) {
+                        daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+                      }
+
+                      // Tạo tháng
+                      const monthSelect =
+                        document.getElementById("monthSelect");
+                      for (let i = 1; i <= 12; i++) {
+                        monthSelect.innerHTML += `<option value="${i}">Tháng ${i}</option>`;
+                      }
+
+                      // Tạo năm
+                      const yearSelect = document.getElementById("yearSelect");
+                      const currentYear = new Date().getFullYear();
+                      for (let i = currentYear; i >= currentYear - 5; i--) {
+                        yearSelect.innerHTML += `<option value="${i}">Năm ${i}</option>`;
+                      }
+                    </script>
+                  </div>
+                  <div
+                    id="chart-container"
+                    style="
+                      width: 100%;
+                      max-width: 700px;
+                      padding: 20px;
+                      background-color: #ffffff;
+                      border-radius: 8px;
+                      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <canvas id="chart"></canvas>
+                  </div>
+
+                  <script>
+                    async function fetchCounts() {
+                      try {
+                        // Lấy dữ liệu từ API người dùng
+                        const userResponse = await fetch(
+                          "http://localhost:3001/user/countUser"
+                        );
+                        const userData = await userResponse.json();
+
+                        // Lấy dữ liệu từ API giáo viên
+                        const teacherResponse = await fetch(
+                          "http://localhost:3001/teacher/countTeacher"
+                        );
+                        const teacherData = await teacherResponse.json();
+
+                        // Lấy dữ liệu từ API khóa học
+                        const courseResponse = await fetch(
+                          "http://localhost:3001/course/countCourse"
+                        );
+                        const courseData = await courseResponse.json();
+
+                        // Lấy dữ liệu từ API admin
+                        const adminResponse = await fetch(
+                          "http://localhost:3001/admin/countAdmin"
+                        );
+                        const adminData = await adminResponse.json();
+
+                        // Lấy dữ liệu từ API doanh thu tổng
+                        const revenueResponse = await fetch(
+                          "http://localhost:3001/payment/total-revenue-all-success"
+                        );
+                        const revenueData = await revenueResponse.json();
+
+                        const ctx = document
+                          .getElementById("chart")
+                          .getContext("2d");
+
+                        new Chart(ctx, {
+                          type: "bar",
+                          data: {
+                            labels: [
+                              "Số lượng User",
+                              "Số lượng Giáo viên",
+                              "Số lượng Khóa học",
+                              "Số lượng Admin",
+                              // "Tổng Doanh Thu", // Đưa doanh thu xuống cuối cùng
+                            ],
+                            datasets: [
+                              {
+                                label: "Thống kê SoftMaster",
+                                data: [
+                                  userData.count,
+                                  teacherData.count,
+                                  courseData.courseCount,
+                                  adminData.count,
+                                  // revenueData.totalRevenue, // Đưa doanh thu xuống cuối
+                                ],
+                                backgroundColor: [
+                                  "rgba(128, 128, 128, 0.7)", // Màu cho cột User
+                                  "rgba(0, 123, 255, 0.7)", // Màu cho cột Giáo viên
+                                  "rgba(255, 159, 64, 0.7)", // Màu cho cột Khóa học
+                                  "rgba(255, 99, 132, 0.7)", // Màu cho cột Admin
+                                  "rgba(40, 167, 69, 0.7)", // Màu cho cột Doanh thu
+                                ],
+                                borderColor: [
+                                  "rgba(64, 64, 64, 1)", // Màu viền cho cột User
+                                  "rgba(0, 86, 179, 1)", // Màu viền cho cột Giáo viên
+                                  "rgba(255, 159, 64, 1)", // Màu viền cho cột Khóa học
+                                  "rgba(255, 99, 132, 1)", // Màu viền cho cột Admin
+                                  "rgba(25, 135, 84, 1)", // Màu viền cho cột Doanh thu
+                                ],
+                                borderWidth: 0.5,
+                                borderRadius: 3,
+                                borderSkipped: false,
+                                barThickness: 30,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            animation: {
+                              duration: 800,
+                              easing: "easeOutQuart",
+                            },
+                            plugins: {
+                              legend: {
+                                display: true,
+                                labels: {
+                                  color: "#333",
+                                  font: { size: 14 },
+                                },
+                              },
+                              tooltip: {
+                                backgroundColor: "#333",
+                                titleColor: "#ffffff",
+                                bodyColor: "#ffffff",
+                                titleFont: { size: 16 },
+                                bodyFont: { size: 14 },
+                                padding: 10,
+                                displayColors: false,
+                                callbacks: {
+                                  label: function (tooltipItem) {
+                                    // Hiển thị thông tin chi tiết khi hover vào mỗi cột
+                                    const label = tooltipItem.label;
+                                    const value = tooltipItem.raw;
+                                    return `${label}: ${value}`;
+                                  },
+                                },
+                              },
+                            },
+                            scales: {
+                              x: {
+                                ticks: { color: "#666" },
+                                grid: { display: false },
+                              },
+                              y: {
+                                beginAtZero: true,
+                                ticks: {
+                                  color: "#666",
+                                  stepSize: Math.ceil(
+                                    Math.max(
+                                      userData.count,
+                                      teacherData.count,
+                                      courseData.courseCount,
+                                      adminData.count
+                                      // revenueData.totalRevenue
+                                    ) / 5
+                                  ),
+                                  max:
+                                    Math.max(
+                                      userData.count,
+                                      teacherData.count,
+                                      courseData.courseCount,
+                                      adminData.count
+                                      // revenueData.totalRevenue
+                                    ) + 50,
+                                },
+                                grid: { color: "rgba(200, 200, 200, 0.3)" },
+                              },
+                            },
+                          },
+                        });
+                      } catch (error) {
+                        console.error("Error fetching data:", error);
+                      }
+                    }
+
+                    fetchCounts();
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- Yearly Breakup -->
+                  <div class="card overflow-hidden">
+                    <!-- Doanh Thu Năm -->
+                    <div class="card-body p-4">
+                      <h5 class="card-title mb-9 fw-semibold">
+                        Thống kê hàng năm
+                      </h5>
+                      <div class="row align-items-center">
+                        <div class="col-8">
+                          <h4 id="annual-revenue" class="fw-semibold mb-3">
+                            $36,358
+                          </h4>
+
+                          <div class="d-flex align-items-center">
+                            <div class="me-4">
+                              <span
+                                class="round-8 bg-primary rounded-circle me-2 d-inline-block"
+                              ></span>
+                              <span class="fs-2" id="current-year">2024</span>
+                            </div>
+                            <div>
+                              <span
+                                class="round-8 bg-light-primary rounded-circle me-2 d-inline-block"
+                              ></span>
+                              <span class="fs-2" id="previous-year">2023</span>
+                            </div>
+                          </div>
+                          <!-- Thêm phần chọn năm -->
+                          <div class="mt-3">
+                            <label for="year-select" class="form-label"
+                              >Chọn năm:</label
+                            >
+                            <select id="year-select" class="form-select">
+                              <!-- Các lựa chọn năm sẽ được thêm động qua JavaScript -->
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="d-flex justify-content-center">
+                            <div id="breakup"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      async function fetchAnnualRevenue() {
+                        try {
+                          // Gọi API để lấy thống kê doanh thu theo năm
+                          const response = await fetch(
+                            "http://localhost:3001/payment/annual-revenue"
+                          );
+                          const data = await response.json();
+                          console.log(data);
+                          // Kiểm tra nếu API trả về thành công
+                          if (data && Array.isArray(data) && data.length > 0) {
+                            const currentYear = new Date().getFullYear(); // Lấy năm hiện tại
+                            let revenueForCurrentYear = 0;
+                            let revenueForPreviousYear = 0;
+
+                            // Lọc doanh thu cho năm hiện tại và năm trước
+                            data.forEach((item) => {
+                              if (item._id.year === currentYear) {
+                                revenueForCurrentYear = item.totalRevenue;
+                              } else if (item._id.year === currentYear - 1) {
+                                revenueForPreviousYear = item.totalRevenue;
+                              }
+                            });
+
+                            // Cập nhật doanh thu năm hiện tại
+                            const annualRevenueElement =
+                              document.getElementById("annual-revenue");
+                            annualRevenueElement.textContent = `${revenueForCurrentYear.toLocaleString(
+                              "vi-VN"
+                            )} đ`;
+
+                            // Tính tỷ lệ phần trăm tăng trưởng
+                            const percentageElement =
+                              document.getElementById("revenue-percentage");
+                            const trendIcon =
+                              document.getElementById("revenue-trend-icon");
+                            let growthPercentage = 0;
+
+                            if (revenueForPreviousYear > 0) {
+                              growthPercentage =
+                                ((revenueForCurrentYear -
+                                  revenueForPreviousYear) /
+                                  revenueForPreviousYear) *
+                                100;
+                            }
+
+                            // Hiển thị tỷ lệ tăng trưởng
+                            if (growthPercentage >= 0) {
+                              percentageElement.textContent = `+${growthPercentage.toFixed(
+                                1
+                              )}%`;
+                              trendIcon.classList.remove("text-danger");
+                              trendIcon.classList.add("text-success");
+                              trendIcon.classList.remove("ti-arrow-down-right");
+                              trendIcon.classList.add("ti-arrow-up-left");
+                            } else {
+                              percentageElement.textContent = `${growthPercentage.toFixed(
+                                1
+                              )}%`;
+                              trendIcon.classList.remove("text-success");
+                              trendIcon.classList.add("text-danger");
+                              trendIcon.classList.remove("ti-arrow-up-left");
+                              trendIcon.classList.add("ti-arrow-down-right");
+                            }
+
+                            // Cập nhật thông tin năm
+                            document.getElementById(
+                              "current-year"
+                            ).textContent = currentYear;
+                            document.getElementById(
+                              "previous-year"
+                            ).textContent = currentYear - 1;
+
+                            // Thêm các năm vào dropdown
+                            const yearSelect =
+                              document.getElementById("year-select");
+                            yearSelect.innerHTML = ""; // Xóa tất cả các tùy chọn cũ
+                            const years = [
+                              ...new Set(data.map((item) => item._id.year)),
+                            ]; // Lấy tất cả các năm có dữ liệu
+
+                            years.forEach((year) => {
+                              const option = document.createElement("option");
+                              option.value = year;
+                              option.textContent = year;
+                              yearSelect.appendChild(option);
+                            });
+
+                            // Chọn năm hiện tại trong dropdown
+                            yearSelect.value = currentYear;
+
+                            // Lắng nghe sự kiện thay đổi lựa chọn năm
+                            yearSelect.addEventListener("change", function () {
+                              const selectedYear = parseInt(this.value, 10);
+                              const selectedYearData = data.find(
+                                (item) => item._id.year === selectedYear
+                              );
+                              const revenueForSelectedYear = selectedYearData
+                                ? selectedYearData.totalRevenue
+                                : 0;
+
+                              // Cập nhật doanh thu cho năm đã chọn
+                              annualRevenueElement.textContent = `${revenueForCurrentYear.toLocaleString(
+                                "vi-VN"
+                              )} đ`;
+
+                              // Cập nhật tỷ lệ phần trăm cho năm đã chọn
+                              const previousYearData = data.find(
+                                (item) => item._id.year === selectedYear - 1
+                              );
+                              const revenueForPreviousYear = previousYearData
+                                ? previousYearData.totalRevenue
+                                : 0;
+                              let selectedGrowthPercentage = 0;
+
+                              if (revenueForPreviousYear > 0) {
+                                selectedGrowthPercentage =
+                                  ((revenueForSelectedYear -
+                                    revenueForPreviousYear) /
+                                    revenueForPreviousYear) *
+                                  100;
+                              }
+
+                              if (selectedGrowthPercentage >= 0) {
+                                percentageElement.textContent = `+${selectedGrowthPercentage.toFixed(
+                                  1
+                                )}%`;
+                                trendIcon.classList.remove("text-danger");
+                                trendIcon.classList.add("text-success");
+                                trendIcon.classList.remove(
+                                  "ti-arrow-down-right"
+                                );
+                                trendIcon.classList.add("ti-arrow-up-left");
+                              } else {
+                                percentageElement.textContent = `${selectedGrowthPercentage.toFixed(
+                                  1
+                                )}%`;
+                                trendIcon.classList.remove("text-success");
+                                trendIcon.classList.add("text-danger");
+                                trendIcon.classList.remove("ti-arrow-up-left");
+                                trendIcon.classList.add("ti-arrow-down-right");
+                              }
+                            });
+                          }
+                        } catch (error) {
+                          console.error(
+                            "Error fetching annual revenue data:",
+                            error
+                          );
+                        }
+                      }
+
+                      // Gọi hàm để lấy doanh thu năm khi trang được tải
+                      fetchAnnualRevenue();
+                    </script>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <!-- Monthly Earnings -->
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row align-items-start">
+                        <!-- Thêm phần chọn tháng -->
+                        <div class="mt-3">
+                          <label for="month-select" class="form-label"
+                            >Chọn tháng:</label
+                          >
+                          <select id="month-select" class="form-select">
+                            <option value="1">Tháng 1</option>
+                            <option value="2">Tháng 2</option>
+                            <option value="3">Tháng 3</option>
+                            <option value="4">Tháng 4</option>
+                            <option value="5">Tháng 5</option>
+                            <option value="6">Tháng 6</option>
+                            <option value="7">Tháng 7</option>
+                            <option value="8">Tháng 8</option>
+                            <option value="9">Tháng 9</option>
+                            <option value="10">Tháng 10</option>
+                            <option value="11">Tháng 11</option>
+                            <option value="12">Tháng 12</option>
+                          </select>
+                        </div>
+
+                        <div class="col-8">
+                          <h5 class="card-title mb-9 fw-semibold">Doanh thu</h5>
+                          <h4 id="monthly-revenue" class="fw-semibold mb-3">
+                            $6,820
+                          </h4>
+                          <!-- Thêm id để cập nhật -->
+                          <div class="d-flex align-items-center pb-1">
+                            <span
+                              class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center"
+                            >
+                              <i
+                                id="revenue-trend-icon"
+                                class="ti ti-arrow-down-right text-danger"
+                              ></i>
+                            </span>
+                            <p
+                              id="revenue-percentage"
+                              class="text-dark me-1 fs-3 mb-0"
+                            >
+                              +9%
+                            </p>
+                            <p class="fs-3 mb-0">so với tháng cũ</p>
+                          </div>
+                        </div>
+
+                        <div class="col-4">
+                          <div class="d-flex justify-content-end">
+                            <div
+                              class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center"
+                            >
+                              <i class="ti ti-currency-dollar fs-6"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="earning"></div>
+                  </div>
+
+                  <script>
+                    async function fetchRevenueForMonth(month) {
+                      try {
+                        // Gọi API để lấy doanh thu theo tháng
+                        const response = await fetch(
+                          "http://localhost:3001/payment/getMonthlyRevenue"
+                        );
+                        const data = await response.json();
+
+                        // Kiểm tra nếu API trả về thành công
+                        if (data.success) {
+                          const monthlyRevenue = data.totalRevenue || {};
+                          const currentYear = new Date().getFullYear(); // Lấy năm hiện tại
+                          const monthKey = `${currentYear}-${
+                            month < 10 ? "0" + month : month
+                          }`; // Tạo key tháng (ví dụ "2024-01")
+
+                          // Lấy doanh thu cho tháng đã chọn, nếu không có thì gán là 0
+                          const revenueForMonth = monthlyRevenue[monthKey] || 0;
+
+                          // Định dạng doanh thu thành VNĐ
+                          const formattedRevenue = new Intl.NumberFormat(
+                            "vi-VN",
+                            {
+                              style: "currency",
+                              currency: "VND",
+                            }
+                          ).format(revenueForMonth);
+
+                          // Cập nhật phần tử HTML với doanh thu tháng
+                          const revenueElement =
+                            document.getElementById("monthly-revenue");
+                          revenueElement.textContent = formattedRevenue;
+
+                          // Tính tỷ lệ phần trăm tăng trưởng
+                          const previousMonth = month - 1 > 0 ? month - 1 : 12; // Nếu là tháng 1, so với tháng 12
+                          const previousMonthKey = `${currentYear}-${
+                            previousMonth < 10
+                              ? "0" + previousMonth
+                              : previousMonth
+                          }`;
+                          const previousRevenue =
+                            monthlyRevenue[previousMonthKey] || 0; // Doanh thu của tháng trước
+
+                          const growthPercentage =
+                            previousRevenue !== 0
+                              ? ((revenueForMonth - previousRevenue) /
+                                  previousRevenue) *
+                                100
+                              : 0;
+                          const percentageElement =
+                            document.getElementById("revenue-percentage");
+                          const trendIcon =
+                            document.getElementById("revenue-trend-icon");
+
+                          // Cập nhật tỷ lệ phần trăm và biểu tượng tăng trưởng
+                          if (growthPercentage >= 0) {
+                            percentageElement.textContent = `+${growthPercentage.toFixed(
+                              1
+                            )}%`;
+                            trendIcon.classList.remove("text-danger");
+                            trendIcon.classList.add("text-success");
+                            trendIcon.classList.remove("ti-arrow-down-right");
+                            trendIcon.classList.add("ti-arrow-up-right");
+                          } else {
+                            percentageElement.textContent = `${growthPercentage.toFixed(
+                              1
+                            )}%`;
+                            trendIcon.classList.remove("text-success");
+                            trendIcon.classList.add("text-danger");
+                            trendIcon.classList.remove("ti-arrow-up-right");
+                            trendIcon.classList.add("ti-arrow-down-right");
+                          }
+                        } else {
+                          console.error(
+                            "Error fetching revenue data:",
+                            data.message
+                          );
+                        }
+                      } catch (error) {
+                        console.error("Error fetching revenue data:", error);
+                      }
+                    }
+
+                    // Lấy tháng hiện tại
+                    const currentMonth = new Date().getMonth() + 1; // `getMonth()` trả về giá trị từ 0 đến 11, cần cộng thêm 1
+
+                    // Cập nhật giá trị mặc định của ô select thành tháng hiện tại
+                    document.getElementById("month-select").value =
+                      currentMonth;
+
+                    // Lắng nghe sự kiện thay đổi lựa chọn tháng
+                    document
+                      .getElementById("month-select")
+                      .addEventListener("change", function () {
+                        const selectedMonth = parseInt(this.value, 10); // Lấy giá trị tháng người dùng chọn
+                        fetchRevenueForMonth(selectedMonth); // Gọi API để lấy doanh thu cho tháng đã chọn
+                      });
+
+                    // Gọi hàm để lấy doanh thu cho tháng hiện tại khi trang được tải
+                    fetchRevenueForMonth(currentMonth); // Lấy doanh thu của tháng hiện tại
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div class="card w-100">
+                <div class="card-body p-4">
+                  <div class="mb-4">
+                    <h5 class="card-title fw-semibold">Giao dịch gần đây</h5>
+                  </div>
+                  <ul
+                    class="timeline-widget mb-0 position-relative mb-n5"
+                    style="max-height: 320px; overflow: hidden"
+                  >
+                    <!-- Các giao dịch sẽ được thêm vào đây -->
+                  </ul>
+                </div>
+              </div>
+
+              <script>
+                const timelineWidget =
+                  document.querySelector(".timeline-widget");
+                let scrollPosition = 0;
+
+                async function fetchTransactions() {
+                  try {
+                    // Gọi API để lấy dữ liệu
+                    const response = await fetch(
+                      "http://localhost:3001/payment/payment-history-sort"
+                    );
+                    const data = await response.json();
+
+                    if (data && Array.isArray(data)) {
+                      data.forEach((transaction) => {
+                        const newTransaction = document.createElement("li");
+                        newTransaction.className =
+                          "timeline-item d-flex position-relative overflow-hidden";
+
+                        const time = new Date(
+                          transaction.createdAt || transaction.timestamp
+                        ); // Sử dụng createdAt nếu không có timestamp
+                        const hours = time
+                          .getHours()
+                          .toString()
+                          .padStart(2, "0");
+                        const minutes = time
+                          .getMinutes()
+                          .toString()
+                          .padStart(2, "0");
+
+                        // Sử dụng dữ liệu đúng từ API và kiểm tra an toàn với fallback value
+                        const randomTransaction = `Có giao dịch từ ${
+                          transaction.userID?.name || "Ẩn Danh"
+                        } là ${
+                          transaction.total
+                            ? transaction.total.toLocaleString()
+                            : "0"
+                        } đ`;
+
+                        const colors = [
+                          "border-success",
+                          "border-info",
+                          "border-warning",
+                          "border-danger",
+                        ];
+                        const randomColorIndex = Math.floor(
+                          Math.random() * colors.length
+                        );
+                        const randomColor = colors[randomColorIndex];
+
+                        newTransaction.innerHTML = `
+                          <div class="timeline-time text-dark flex-shrink-0 text-end">${hours}:${minutes}</div>
+                          <div class="timeline-badge-wrap d-flex flex-column align-items-center">
+                            <span class="timeline-badge border-2 ${randomColor} flex-shrink-0 my-8"></span>
+                            <span class="timeline-badge-border d-block flex-shrink-0"></span>
+                          </div>
+                          <div class="timeline-desc fs-3 text-dark mt-n1">${randomTransaction}</div>
+                        `;
+
+                        timelineWidget.appendChild(newTransaction);
+                      });
+                    }
+                  } catch (error) {
+                    console.error("Có lỗi khi gọi API:", error);
+                  }
+                }
+
+                function autoScroll() {
+                  if (
+                    scrollPosition <
+                    timelineWidget.scrollHeight - timelineWidget.clientHeight
+                  ) {
+                    scrollPosition += 1;
+                  } else {
+                    scrollPosition = 0;
+                  }
+                  timelineWidget.scrollTo(0, scrollPosition);
+                }
+
+                // Gọi API để lấy dữ liệu khi trang được tải
+                fetchTransactions();
+
+                // Thực hiện cuộn tự động mỗi 30ms
+                setInterval(autoScroll, 30);
+
+                // Thêm giao dịch mới mỗi 3 giây (hoặc bạn có thể điều chỉnh theo API)
+                setInterval(fetchTransactions, 3000); // Bạn có thể điều chỉnh thời gian lấy dữ liệu từ API ở đây
+              </script>
+            </div>
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+              <div class="card w-100">
+                <div class="card-body p-4">
+                  <h5 class="card-title fw-semibold mb-4">Top Chi Tiêu</h5>
+                  <div class="table-responsive">
+                    <table class="table text-nowrap mb-0 align-middle">
+                      <thead class="text-dark fs-4">
+                        <tr>
+                          <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Top</h6>
+                          </th>
+                          <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Tên</h6>
+                          </th>
+                          <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Trạng thái</h6>
+                          </th>
+                          <th class="border-bottom-0">
+                            <h6 class="fw-semibold mb-0">Chi tiêu</h6>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="transaction-table-body">
+                        <!-- Dữ liệu từ API sẽ được điền vào đây -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              // Hàm gọi API và xử lý dữ liệu
+              async function fetchData() {
+                try {
+                  const response = await fetch(
+                    "http://localhost:3001/payment/payment-history-sort"
+                  );
+                  const data = await response.json();
+
+                  // Sắp xếp theo `total` giảm dần và chọn 5 mục đầu tiên
+                  const sortedData = data
+                    .sort((a, b) => b.total - a.total)
+                    .slice(0, 5);
+
+                  const tableBody = document.getElementById(
+                    "transaction-table-body"
+                  );
+
+                  // Xóa dữ liệu cũ
+                  tableBody.innerHTML = "";
+
+                  // Thêm từng hàng vào bảng
+                  sortedData.forEach((item, index) => {
+                    const row = document.createElement("tr");
+
+                    // Cột Số thứ tự
+                    const rankCell = document.createElement("td");
+                    rankCell.className = "border-bottom-0";
+                    rankCell.innerHTML = `<h6 class="fw-semibold mb-0">${
+                      index + 1
+                    }</h6>`;
+                    row.appendChild(rankCell);
+
+                    // Cột Tên (kiểm tra nếu không có `name` hoặc `userID` là null)
+                    const nameCell = document.createElement("td");
+                    nameCell.className = "border-bottom-0";
+                    const name =
+                      item.userID && item.userID.name
+                        ? item.userID.name
+                        : "Ẩn Danh";
+                    nameCell.innerHTML = `<h6 class="fw-semibold mb-0">${name}</h6>`;
+                    row.appendChild(nameCell);
+
+                    // Cột Trạng thái
+                    const statusCell = document.createElement("td");
+                    statusCell.className = "border-bottom-0";
+                    const statusBadge = document.createElement("span");
+                    statusBadge.className = `badge rounded-3 fw-semibold ${
+                      item.status === "SUCCESS" ? "bg-success" : "bg-secondary"
+                    }`;
+                    statusBadge.textContent =
+                      item.status === "SUCCESS"
+                        ? "Đã thanh toán"
+                        : "Chưa thanh toán";
+                    statusCell.appendChild(statusBadge);
+                    row.appendChild(statusCell);
+
+                    // Cột Chi tiêu (Total) với đơn vị VNĐ
+                    const totalCell = document.createElement("td");
+                    totalCell.className = "border-bottom-0";
+                    totalCell.innerHTML = `<h6 class="fw-semibold mb-0 fs-4">${item.total.toLocaleString(
+                      "vi-VN"
+                    )} VNĐ</h6>`;
+                    row.appendChild(totalCell);
+
+                    // Thêm hàng vào bảng
+                    tableBody.appendChild(row);
+                  });
+                } catch (error) {
+                  console.error("Error fetching data:", error);
+                }
+              }
+
+              // Gọi hàm để lấy dữ liệu và hiển thị lên bảng
+              fetchData();
+            </script>
+          </div>
+
+          <div class="row">
+            <div class="text-start">
+              <span style="font-size: 20px; font-weight: 700; color: #202224"
+                >Top khóa học bán chạy</span
+              >
+            </div>
+            <div
+              style="margin-top: 20px"
+              id="courses-container"
+              class="scroll-container"
+            >
+              <!-- Các thẻ khóa học sẽ được thêm vào đây từ API -->
+            </div>
+            <style>
+              .scroll-container {
+                display: flex;
+                overflow: hidden;
+                white-space: nowrap;
+                width: 100%;
+                position: relative;
+                animation: scroll 20s linear infinite;
+              }
+
+              .course-item {
+                display: inline-block;
+                width: 250px; /* Đặt chiều rộng cố định cho thẻ */
+                margin-right: 20px;
+              }
+
+              .card {
+                width: 100%;
+                display: inline-block;
+                vertical-align: top;
+              }
+
+              .card img {
+                width: 100%;
+                height: 150px; /* Đặt chiều cao cố định cho hình ảnh */
+                object-fit: cover; /* Giúp hình ảnh không bị méo và căn chỉnh cho hợp lý */
+              }
+
+              .card-body {
+                padding: 10px;
+              }
+
+              @keyframes scroll {
+                0% {
+                  transform: translateX(100%);
+                }
+                100% {
+                  transform: translateX(-100%);
+                }
+              }
+            </style>
+            <script>
+              fetch("http://localhost:3001/payment/top-selling-courses")
+                .then((response) => response.json())
+                .then((data) => {
+                  const coursesContainer =
+                    document.getElementById("courses-container");
+                  coursesContainer.innerHTML = ""; // Xóa nội dung cũ nếu có
+
+                  data.forEach((course) => {
+                    const courseElement = `
+                      <div class="course-item">
+                        <div class="card overflow-hidden rounded-2">
+                          <div class="position-relative">
+                            <a href="javascript:void(0)">
+                              <img
+                                src="${course.courseDetails.img}"
+                                class="card-img-top rounded-0"
+                                alt="${course.courseDetails.name}"
+                              />
+                            </a>
+                            <a
+                              href="javascript:void(0)"
+                              class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              data-bs-title="Thêm vào giỏ hàng"
+                            >
+                              <i class="ti ti-basket fs-4"></i>
+                            </a>
+                          </div>
+                          <div class="card-body pt-3 p-4">
+                            <h6 class="fw-semibold fs-4">${
+                              course.courseDetails.name
+                            }</h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                              <h6 class="fw-semibold fs-4 mb-0">
+                                ${new Intl.NumberFormat("vi-VN", {
+                                  style: "currency",
+                                  currency: "VND",
+                                }).format(course.courseDetails.price)}
+                              </h6>
+                              <ul class="list-unstyled d-flex align-items-center mb-0">
+                                <li><i class="ti ti-star text-warning"></i></li>
+                                <li><i class="ti ti-star text-warning"></i></li>
+                                <li><i class="ti ti-star text-warning"></i></li>
+                                <li><i class="ti ti-star text-warning"></i></li>
+                                <li><i class="ti ti-star text-warning"></i></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                    coursesContainer.innerHTML += courseElement;
+                  });
+                });
+            </script>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const admin = JSON.parse(localStorage.getItem("admin"));
+                const adminId = admin ? admin.id : null; // Lấy adminId
+                const currentAvatarContainer = document.getElementById(
+                  "currentAvatarContainer"
+                );
+                const currentAvatar = document.getElementById("currentAvatar");
+
+                if (adminId) {
+                  // Gửi yêu cầu lấy thông tin admin từ API
+                  fetch(`http://localhost:3001/admin/getAdminByID/${adminId}`)
+                    .then((response) => response.json())
+                    .then((adminData) => {
+                      // Lấy avatar của admin và hiển thị
+                      if (adminData.avatar) {
+                        currentAvatar.src = adminData.avatar; // Gán URL avatar vào thẻ img
+                        currentAvatarContainer.style.display = "block"; // Hiển thị phần tử chứa avatar
+                      } else {
+                        currentAvatarContainer.style.display = "none"; // Ẩn phần tử nếu không có avatar
+                      }
+                    })
+                    .catch((error) => {
+                      console.error("Error fetching admin info:", error);
+                    });
+                } else {
+                  console.error("Vui lòng đăng nhập để sử dụng hệ thống");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

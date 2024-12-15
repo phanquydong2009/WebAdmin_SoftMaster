@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh Sách Khóa Học</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .course-container {
+        margin: 20px;
+      }
+      .course {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .course img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+      .course-info {
+        flex-grow: 1;
+        margin-left: 10px;
+      }
+      button {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Danh Sách Khóa Học</h1>
+    <div id="courseList" class="course-container">
+      <!-- Khóa học sẽ được hiển thị ở đây -->
+    </div>
+
+    <script>
+      // Fetch data from the API to load the courses
+      async function loadCourses() {
+        const response = await fetch("http://localhost:3001/course/getAll");
+        const courses = await response.json();
+
+        const courseList = document.getElementById("courseList");
+        courseList.innerHTML = "";
+
+        courses.forEach((course) => {
+          const courseElement = document.createElement("div");
+          courseElement.classList.add("course");
+          courseElement.innerHTML = `
+          <img src="${course.img}" alt="${course.name}">
+          <div class="course-info">
+            <h3>${course.name}</h3>
+            <p>${course.describe}</p>
+            <p>Giá: ${course.price.toLocaleString()} VND</p>
+          </div>
+          <button onclick="toggleBlockStatus('${course._id}', ${
+            course.isBlock
+          })">
+            ${course.isBlock ? "Ẩn" : "Hiện"}
+          </button>
+        `;
+          courseList.appendChild(courseElement);
+        });
+      }
+
+      // Toggle the 'isBlock' status using PUT request
+      async function toggleBlockStatus(courseID, currentStatus) {
+        const newStatus = !currentStatus;
+        const response = await fetch(
+          `http://localhost:3001/course/toggleIsBlock/${courseID}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ isBlock: newStatus }),
+          }
+        );
+
+        const data = await response.json();
+        if (data.message === "Trạng thái khóa học đã được thay đổi") {
+          alert("Trạng thái khóa học đã được thay đổi!");
+          loadCourses(); // Reload courses after changing status
+        } else {
+          alert("Có lỗi xảy ra!");
+        }
+      }
+
+      // Load courses when the page is loaded
+      loadCourses();
+    </script>
+  </body>
+</html>

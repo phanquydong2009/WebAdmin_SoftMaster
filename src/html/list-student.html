@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soft Master | Trang Quản Trị</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/logo.jpg"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    .avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+  </style>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+          <div
+            class="brand-logo d-flex align-items-center justify-content-between"
+          >
+            <a href="./dashboard.html" class="text-nowrap logo-img">
+              <h2>
+                <strong class="text-primary">Soft</strong>
+                <strong class="" style="color: #202224">Master</strong>
+              </h2>
+            </a>
+            <div
+              class="close-btn d-xl-none d-block sidebartoggler cursor-pointer"
+              id="sidebarCollapse"
+            >
+              <i class="ti ti-x fs-8"></i>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Trang quản trị</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./dashboard.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Trang tổng quan</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-student.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách học sinh</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                  </span>
+                  <span class="hide-menu">Xem danh sách giảng viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-admin.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Admin</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./list-course.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                  <span class="hide-menu">Quản lý Khóa Học</span>
+                </a>
+              </li>
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Chi tiết</span>
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link"
+                  href="./add-teacher.html"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <i class="fa-solid fa-plus"></i>
+                  </span>
+                  <span class="hide-menu">Thêm giảng viên</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <header class="app-header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item d-block d-xl-none">
+                <a
+                  class="nav-link sidebartoggler nav-icon-hover"
+                  id="headerCollapse"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti ti-menu-2"></i>
+                </a>
+              </li>
+            </ul>
+            <div
+              class="navbar-collapse justify-content-end px-0"
+              id="navbarNav"
+            >
+              <ul
+                class="navbar-nav flex-row ms-auto align-items-center justify-content-end"
+              >
+                <!-- Thông báo -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="javascript:void(0)">
+                    <i class="ti ti-bell-ringing"></i>
+                    <div class="notification bg-primary rounded-circle"></div>
+                  </a>
+                </li>
+                <!-- Ngôn ngữ -->
+                <li class="nav-item mx-2 dropdown">
+                  <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    id="languageDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/vn.png"
+                      alt="Vietnamese Flag"
+                      class="me-2 rounded-2"
+                      style="width: 45px; height: 35px"
+                    />
+                    <span class="d-none d-sm-inline">Việt Nam</span>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="languageDropdown"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/us.png"
+                          alt="English Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        English</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="https://flagcdn.com/w20/fr.png"
+                          alt="French Flag"
+                          class="me-2"
+                          style="width: 20px; height: 15px"
+                        />
+                        Français</a
+                      >
+                    </li>
+                    <!-- Thêm các ngôn ngữ khác tại đây -->
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link nav-icon-hover"
+                    href="javascript:void(0)"
+                    id="drop2"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div id="currentAvatarContainer">
+                      <img
+                        id="currentAvatar"
+                        src=""
+                        alt="Loading"
+                        width="35"
+                        height="35"
+                        class="rounded-circle"
+                      />
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                    aria-labelledby="drop2"
+                  >
+                    <div class="message-body">
+                      <a
+                        href="changepass.html"
+                        class="d-flex align-items-center gap-2 dropdown-item"
+                      >
+                        <i class="ti ti-user fs-6"></i>
+                        <p class="mb-0 fs-3">Cài Đặt Tài Khoản</p>
+                      </a>
+
+                      <a
+                        id="logoutButton"
+                        href="./index.html"
+                        class="btn btn-outline-primary mx-3 mt-2 d-block"
+                        >Đăng Xuất</a
+                      >
+                      <script>
+                        function logout() {
+                          localStorage.removeItem("admin");
+
+                          window.location.href = "./index.html";
+                        }
+
+                        document
+                          .getElementById("logoutButton")
+                          .addEventListener("click", logout);
+
+                        window.onload = function () {
+                          const admin = localStorage.getItem("admin");
+                          if (!admin) {
+                            window.location.href = "./index.html";
+                          }
+                        };
+                      </script>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div>
+            <div class="text-start">
+              <span style="font-size: 32px; font-weight: 700; color: #202224"
+                >Danh sách học sinh</span
+              >
+            </div>
+            <div class="py-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="input-group mb-3" style="width: 400px">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <input
+                      style="background-color: #f5f6fa"
+                      type="text"
+                      class="form-control rounded-5"
+                      placeholder="Tìm kiếm"
+                      id="searchInput"
+                    />
+                  </div>
+                  <!-- Phân trang -->
+                  <div
+                    class="pagination-controls"
+                    style="
+                      width: 30%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-evenly;
+                    "
+                  >
+                    <button id="prevPage" class="btn btn-primary" disabled>
+                      Trang trước
+                    </button>
+                    <span id="currentPage">Trang 1</span>
+                    <button id="nextPage" class="btn btn-primary">
+                      Trang sau
+                    </button>
+
+                    <!-- Số lượng bản ghi trên mỗi trang -->
+                    <select
+                      id="pageSize"
+                      class="form-select"
+                      style="width: auto"
+                    >
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                      <option value="all">Tất cả</option>
+                    </select>
+                  </div>
+                  <div class="card mb-4">
+                    <div
+                      class="table-responsive p-0"
+                      style="max-height: 75vh; overflow-y: auto"
+                    >
+                      <div class="card-body">
+                        <div class="table-responsive p-0">
+                          <table class="table align-items-center mb-0">
+                            <thead style="background-color: #f1f4f9">
+                              <tr>
+                                <th
+                                  style="color: #202224"
+                                  class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Tên học sinh
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Email
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Ngày sinh
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Số điện thoại
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Giới tính
+                                </th>
+                                <th
+                                  style="color: #202224"
+                                  class="text-uppercase text-xxs font-weight-bolder opacity-7"
+                                >
+                                  Ngày đăng kí
+                                </th>
+                                <th class="text-secondary opacity-7"></th>
+                                <th class="text-secondary opacity-7"></th>
+                              </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                              <!-- Dữ liệu từ API sẽ được thêm vào đây -->
+                            </tbody>
+                          </table>
+                          <div id="paginationContainer">
+                            <!-- Các nút phân trang sẽ được thêm vào đây -->
+                          </div>
+
+                          <script>
+                            document.addEventListener(
+                              "DOMContentLoaded",
+                              () => {
+                                const admin = JSON.parse(
+                                  localStorage.getItem("admin")
+                                );
+                                const adminId = admin ? admin.id : null;
+                                const currentAvatarContainer =
+                                  document.getElementById(
+                                    "currentAvatarContainer"
+                                  );
+                                const currentAvatar =
+                                  document.getElementById("currentAvatar");
+
+                                if (adminId) {
+                                  fetch(
+                                    `http://localhost:3001/admin/getAdminByID/${adminId}`
+                                  )
+                                    .then((response) => response.json())
+                                    .then((adminData) => {
+                                      if (adminData.avatar) {
+                                        currentAvatar.src = adminData.avatar;
+                                        currentAvatarContainer.style.display =
+                                          "block";
+                                      } else {
+                                        currentAvatarContainer.style.display =
+                                          "none";
+                                      }
+                                    })
+                                    .catch((error) => {
+                                      console.error(
+                                        "Error fetching admin info:",
+                                        error
+                                      );
+                                    });
+                                } else {
+                                  console.error(
+                                    "Vui lòng đăng nhập để sử dụng hệ thống"
+                                  );
+                                }
+
+                                const searchInput =
+                                  document.getElementById("searchInput");
+                                const tableBody =
+                                  document.getElementById("userTableBody");
+                                const pageSizeSelect =
+                                  document.getElementById("pageSize");
+                                const prevPageBtn =
+                                  document.getElementById("prevPage");
+                                const nextPageBtn =
+                                  document.getElementById("nextPage");
+                                const currentPageSpan =
+                                  document.getElementById("currentPage");
+
+                                let currentPage = 1;
+                                let itemsPerPage = 10;
+                                let totalItems = 0;
+                                let totalPages = 0;
+                                let data = [];
+
+                                const formatDate = (dateString) => {
+                                  if (!dateString) return "";
+                                  const date = new Date(dateString);
+                                  return `${String(date.getDate()).padStart(
+                                    2,
+                                    "0"
+                                  )}-${String(date.getMonth() + 1).padStart(
+                                    2,
+                                    "0"
+                                  )}-${date.getFullYear()}`;
+                                };
+
+                                const updateTable = (users) => {
+                                  const fragment =
+                                    document.createDocumentFragment();
+                                  tableBody.innerHTML = "";
+
+                                  users.forEach((user) => {
+                                    const row = document.createElement("tr");
+
+                                    const nameCell =
+                                      document.createElement("td");
+                                    const emailCell =
+                                      document.createElement("td");
+                                    const birthDateCell =
+                                      document.createElement("td");
+                                    const phoneCell =
+                                      document.createElement("td");
+                                    const genderCell =
+                                      document.createElement("td");
+                                    const registerDateCell =
+                                      document.createElement("td");
+                                    const detailButtonCell =
+                                      document.createElement("td");
+                                    const viewScoreButtonCell =
+                                      document.createElement("td");
+
+                                    nameCell.textContent = user.name || "";
+                                    nameCell.style.color = "black"; // Thêm màu chữ đen
+                                    emailCell.textContent = user.email || "";
+                                    emailCell.style.color = "black"; // Thêm màu chữ đen
+                                    birthDateCell.textContent = formatDate(
+                                      user.birthday
+                                    );
+                                    birthDateCell.style.color = "black"; // Thêm màu chữ đen
+                                    phoneCell.textContent = user.phone || "";
+                                    phoneCell.style.color = "black"; // Thêm màu chữ đen
+                                    genderCell.textContent = user.gender || "";
+                                    genderCell.style.color = "black"; // Thêm màu chữ đen
+                                    registerDateCell.textContent = formatDate(
+                                      user.createdAt
+                                    );
+                                    registerDateCell.style.color = "black"; // Thêm màu chữ đen
+
+                                    const detailButton =
+                                      document.createElement("button");
+                                    detailButton.classList.add(
+                                      "btn",
+                                      "btn-info",
+                                      "rounded-5"
+                                    );
+                                    detailButton.textContent = "Chi tiết";
+                                    detailButton.onclick = () =>
+                                      fetchAndShowCourses(user._id);
+
+                                    const viewScoreButton =
+                                      document.createElement("button");
+                                    viewScoreButton.classList.add(
+                                      "btn",
+                                      "btn-warning",
+                                      "rounded-5"
+                                    );
+                                    viewScoreButton.textContent = "Xem điểm";
+                                    viewScoreButton.onclick = () =>
+                                      fetchAndShowScores(user._id);
+
+                                    detailButtonCell.appendChild(detailButton);
+                                    viewScoreButtonCell.appendChild(
+                                      viewScoreButton
+                                    );
+
+                                    row.append(
+                                      nameCell,
+                                      emailCell,
+                                      birthDateCell,
+                                      phoneCell,
+                                      genderCell,
+                                      registerDateCell,
+                                      detailButtonCell,
+                                      viewScoreButtonCell
+                                    );
+
+                                    fragment.appendChild(row);
+                                  });
+
+                                  tableBody.appendChild(fragment);
+                                };
+                                const fetchAndShowCourses = (userID) => {
+                                  // Fetch thông tin người dùng để lấy tên
+                                  fetch(
+                                    `http://localhost:3001/user/getUserByID/${userID}`
+                                  )
+                                    .then((response) => response.json())
+                                    .then((userData) => {
+                                      const userName =
+                                        userData.name || "Người dùng";
+
+                                      // Fetch danh sách khóa học
+                                      fetch(
+                                        `http://localhost:3001/enrollCourse/getCourseUserEnrolled/${userID}`
+                                      )
+                                        .then((response) => response.json())
+                                        .then((courses) => {
+                                          const courseDetails =
+                                            courses.length > 0
+                                              ? courses.map(
+                                                  (item) =>
+                                                    `${
+                                                      item.courseID.name
+                                                    } - Ngày tham gia: ${new Date(
+                                                      item.createdAt
+                                                    ).toLocaleDateString(
+                                                      "vi-VN"
+                                                    )}`
+                                                )
+                                              : ["Chưa đăng ký khóa học nào."];
+
+                                          // Hiển thị popup với tên người dùng
+                                          showPopup(
+                                            `Khóa học đã đăng ký - ${userName}`,
+                                            courseDetails
+                                          );
+                                        })
+                                        .catch((error) =>
+                                          console.error(
+                                            "Error fetching courses:",
+                                            error
+                                          )
+                                        );
+                                    })
+                                    .catch((error) =>
+                                      console.error(
+                                        "Error fetching user data:",
+                                        error
+                                      )
+                                    );
+                                };
+
+                                const fetchAndShowScores = (userID) => {
+                                  // Fetch thông tin người dùng để lấy tên
+                                  fetch(
+                                    `http://localhost:3001/user/getUserByID/${userID}`
+                                  )
+                                    .then((response) => response.json())
+                                    .then((userData) => {
+                                      const userName =
+                                        userData.name || "Người dùng";
+
+                                      // Fetch điểm số
+                                      fetch(
+                                        `http://localhost:3001/score/getScoreByUserID/${userID}`
+                                      )
+                                        .then((response) => response.json())
+                                        .then((scoreData) => {
+                                          if (
+                                            scoreData.scores &&
+                                            scoreData.scores.length > 0
+                                          ) {
+                                            const { score, createdAt, testID } =
+                                              scoreData.scores[0];
+
+                                            if (testID && testID._id) {
+                                              fetch(
+                                                `http://localhost:3001/score/getPointByTestIDAndUserID/${userID}/${testID._id}`
+                                              )
+                                                .then((response) =>
+                                                  response.json()
+                                                )
+                                                .then((pointData) => {
+                                                  if (
+                                                    pointData.scores &&
+                                                    pointData.scores.length > 0
+                                                  ) {
+                                                    const { title } =
+                                                      pointData.scores[0]
+                                                        .testID;
+                                                    showPopup(
+                                                      `Thông tin điểm số - ${userName}`,
+                                                      [
+                                                        `Bài test: ${title}`,
+                                                        `Điểm: ${score}`,
+                                                        `Thời gian làm bài: ${formatDate(
+                                                          createdAt
+                                                        )}`,
+                                                      ]
+                                                    );
+                                                  } else {
+                                                    showPopup(
+                                                      `Thông tin điểm số - ${userName}`,
+                                                      [
+                                                        "Không tìm thấy bài test.",
+                                                      ]
+                                                    );
+                                                  }
+                                                })
+                                                .catch((error) =>
+                                                  console.error(
+                                                    "Error fetching test details:",
+                                                    error
+                                                  )
+                                                );
+                                            } else {
+                                              showPopup(
+                                                `Thông tin điểm số - ${userName}`,
+                                                ["Chưa làm bài test."]
+                                              );
+                                            }
+                                          } else {
+                                            showPopup(
+                                              `Thông tin điểm số - ${userName}`,
+                                              ["Chưa làm bài test."]
+                                            );
+                                          }
+                                        })
+                                        .catch((error) =>
+                                          console.error(
+                                            "Error fetching scores:",
+                                            error
+                                          )
+                                        );
+                                    })
+                                    .catch((error) =>
+                                      console.error(
+                                        "Error fetching user data:",
+                                        error
+                                      )
+                                    );
+                                };
+
+                                const showPopup = (title, items) => {
+                                  const existingModal =
+                                    document.getElementById("dataModal");
+                                  if (existingModal) existingModal.remove();
+
+                                  const modal = document.createElement("div");
+                                  modal.classList.add("modal", "fade");
+                                  modal.id = "dataModal";
+                                  modal.tabIndex = -1;
+                                  modal.innerHTML = `
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">${title}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <ul class="list-group">
+                                          ${items
+                                            .map(
+                                              (item) =>
+                                                `<li class="list-group-item">${item}</li>`
+                                            )
+                                            .join("")}
+                                        </ul>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                `;
+
+                                  document.body.appendChild(modal);
+                                  const bootstrapModal = new bootstrap.Modal(
+                                    modal
+                                  );
+                                  bootstrapModal.show();
+                                };
+
+                                const fetchData = (searchParams = {}) => {
+                                  fetch("http://localhost:3001/user/filter", {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify(searchParams),
+                                  })
+                                    .then((response) => response.json())
+                                    .then((fetchedData) => {
+                                      // Sắp xếp dữ liệu theo createdAt giảm dần
+                                      data = fetchedData.sort(
+                                        (a, b) =>
+                                          new Date(b.createdAt) -
+                                          new Date(a.createdAt)
+                                      );
+
+                                      totalItems = data.length;
+                                      totalPages = Math.ceil(
+                                        totalItems / itemsPerPage
+                                      );
+
+                                      currentPage = 1; // Reset về trang đầu
+                                      displayUsers(currentPage);
+                                      updatePaginationControls();
+                                    })
+                                    .catch((error) =>
+                                      console.error(
+                                        "Error fetching data:",
+                                        error
+                                      )
+                                    );
+                                };
+
+                                const displayUsers = (page) => {
+                                  const startIndex = (page - 1) * itemsPerPage;
+                                  const endIndex = Math.min(
+                                    startIndex + itemsPerPage,
+                                    totalItems
+                                  );
+                                  const usersToDisplay = data.slice(
+                                    startIndex,
+                                    endIndex
+                                  );
+                                  updateTable(usersToDisplay);
+                                };
+
+                                const updatePaginationControls = () => {
+                                  currentPageSpan.textContent = `Trang ${currentPage}`;
+                                  prevPageBtn.disabled = currentPage === 1;
+                                  nextPageBtn.disabled =
+                                    currentPage === totalPages;
+
+                                  prevPageBtn.onclick = () => {
+                                    if (currentPage > 1) {
+                                      currentPage--;
+                                      displayUsers(currentPage);
+                                      updatePaginationControls();
+                                    }
+                                  };
+
+                                  nextPageBtn.onclick = () => {
+                                    if (currentPage < totalPages) {
+                                      currentPage++;
+                                      displayUsers(currentPage);
+                                      updatePaginationControls();
+                                    }
+                                  };
+                                };
+
+                                searchInput.addEventListener("input", () => {
+                                  const searchTerm = searchInput.value.trim();
+                                  const searchParams = {};
+
+                                  if (searchTerm) {
+                                    if (searchTerm.includes("@")) {
+                                      searchParams.email = searchTerm;
+                                    } else if (/^\d+$/.test(searchTerm)) {
+                                      searchParams.phone = searchTerm;
+                                    } else {
+                                      searchParams.name = searchTerm;
+                                    }
+                                  }
+
+                                  fetchData(searchParams); // Lấy dữ liệu mới dựa trên tìm kiếm
+                                });
+
+                                pageSizeSelect.addEventListener(
+                                  "change",
+                                  (event) => {
+                                    itemsPerPage =
+                                      event.target.value === "all"
+                                        ? totalItems
+                                        : parseInt(event.target.value, 10);
+                                    totalPages = Math.ceil(
+                                      totalItems / itemsPerPage
+                                    );
+                                    currentPage = 1;
+                                    displayUsers(currentPage);
+                                    updatePaginationControls();
+                                  }
+                                );
+
+                                fetchData();
+                              }
+                            );
+                          </script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!--  Header End -->
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  </body>
+</html>
