@@ -1184,6 +1184,9 @@
                                 fetch("http://localhost:3001/course/getAll")
                                   .then((response) => response.json())
                                   .then((data) => {
+                                      // Sắp xếp dữ liệu theo ngày tạo, mới nhất lên trước
+      const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
                                     const tableBody =
                                       document.getElementById(
                                         "courseTableBody"
